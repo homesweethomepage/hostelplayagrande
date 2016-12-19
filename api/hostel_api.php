@@ -8,7 +8,6 @@ class HostelApi extends ApiBase {
   function __construct($request){
     parent::__construct($request);
     $this->model = new HostelModel();
-    $this->checkSession();
   }
 
   function checkSession(){
@@ -39,12 +38,15 @@ class HostelApi extends ApiBase {
         }
         break;
       case 'DELETE':
+        $this->checkSession();
         if(count($this->args) > 0) return $this->model->borrarNovedad($this->args[0]);
         break;
       case 'POST':
+        $this->checkSession();
         if(isset($_POST['novedad'])) return $this->model->agregarNovedad($_POST);
         break;
       case 'PUT':
+        $this->checkSession();
         if(count($this->args) > 0) return $this->model->modificarNovedad($this->args[0],$this->args[1],$this->args[2]);
         break;
       default:
@@ -59,9 +61,11 @@ class HostelApi extends ApiBase {
         return $this->model->getActividades();
         break;
       case 'DELETE':
+        $this->checkSession();
         if(count($this->args) > 0) return $this->model->borrarActividad($this->args[0]);
         break;
       case 'POST':
+        $this->checkSession();
         if(isset($_POST['actividad'])) return $this->model->agregarActividad($_POST);
         break;
       default:
@@ -76,9 +80,11 @@ class HostelApi extends ApiBase {
         return $this->model->getActivities();
         break;
       case 'DELETE':
+        $this->checkSession();
         if(count($this->args) > 0) return $this->model->borrarActivity($this->args[0]);
         break;
       case 'POST':
+        $this->checkSession();
         if(isset($_POST['activity'])) return $this->model->agregarActivity($_POST);
         break;
       default:
@@ -98,6 +104,7 @@ class HostelApi extends ApiBase {
         }
         break;
       case 'DELETE':
+        $this->checkSession();
         if(count($this->args) > 0) return $this->model->borrarImgGaleria($this->args[0]);
         break;
       default:

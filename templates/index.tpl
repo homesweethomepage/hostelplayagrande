@@ -521,37 +521,9 @@
   </section><!-- ./TARIFAS -->
 
   <!-- NOVEDADES -->
-    <section id="news" class="section-border-top">
-      <div class="container">
-        <div class="row box-primario">
-          <div class="box-titulo-primario">
-            <h1>Novedades</h1>
-          </div>
-        </div>
-        <article>
-          <div>
-            <h3>{$novedades[0]['novedad']}</h3>
-            <span><i class="fa fa-calendar" aria-hidden="true"></i>28/11/2016</span>
-          </div>
-          <div class="row">
-            <div class="col-md-7 box-text-news">
-              {$novedades[0]['cuerpo']}
-              <div>
-                <ul class="pager">
-                  <li class="previous"><a href="#">Anterior</a></li>
-                  <li class="next"><a href="#">Siguiente</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <div class="box-img box-shadow">
-                <img class="img-responsive" src="{$novedades[0]['imagen']}" alt="Foto Noticia 1">
-              </div>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section><!-- ./NOVEDADES -->
+  <section id="news" class="section-border-top">
+
+  </section><!-- ./NOVEDADES -->
 
   <!-- CONTACTOS -->
   <section id="contacts" class="section-border-top">
@@ -636,6 +608,7 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDeOlwGrHwbkPbFkXvAdXEN3On7mrWtxTc"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
   <script src="js/map.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/animate.js"></script>
@@ -643,5 +616,6 @@
   <script src="js/modal.js"></script>
   <script src="js/descripciones.js"></script>
   <script src="js/reserva.js"></script>
+  <script src="js/novedades.js"></script>
 </body>
 </html>
