@@ -1,0 +1,9 @@
+<div class="well col-md-3 col-sm-6 col-xs-12">
+    <div class="team-img">
+        <img class="img-responsive" src="uploaded/imagenes/actividades/{{ruta}}" alt="">
+    </div>
+    <div class="team-info">
+        <h3>{{activity}}<a class="glyphicon glyphicon-trash js-borrar-activity" href="" idactivity="{{id}}"></a></h3>
+    </div>
+    {{cuerpo}}
+</div>
