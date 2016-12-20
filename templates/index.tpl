@@ -522,6 +522,22 @@
 
   <!-- NOVEDADES -->
   <section id="news" class="section-border-top">
+    <div class="container">
+      <div class="row box-primario">
+        <div class="box-titulo-primario">
+          <h1>Novedades</h1>
+        </div>
+      </div>
+      <article id="article-news">
+        <ul class="pager">
+          <li class="previous"><a id="#nov-prev" class="inactive" href="#"><i class="fa fa-caret-left fa-3x" aria-hidden="true"></i>
+</a></li>
+          <li class="next"><a id="#nov-nxt" href="#"><i class="fa fa-caret-right fa-3x" aria-hidden="true"></i>
+</a></li>
+        </ul>
+        <!-- ACA VA EL TEMPLATE -->
+      </article>
+    </div>
 
   </section><!-- ./NOVEDADES -->
 

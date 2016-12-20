@@ -5,7 +5,7 @@ function frontCrearNovedadHTML(novedad,prev,nxt) {
   $.ajax({ url: "js/templates/front-novedades.mst",
      success: function(template) {
        var rendered = Mustache.render(template,novedad);
-       $('#news').append(rendered);
+       $('#article-news').append(rendered);
        if(nxt==1){
         //  cambiar clase boton
        }
@@ -24,15 +24,17 @@ function inicNovedades(){
     success: function(novedades){
       arrayNovedades = novedades;
       console.log(novedades);
-      $('#news').html('');
+      //$('#article-news').html('');
+      $('#article-news').children(':not(.pager)').remove();
       var html = frontCrearNovedades(0);
-      $('#news').append(html);
+      $('#article-news').append(html);
     }
   });
 }
 
 function frontCrearNovedades(instr){
-  $('#news').html('');
+  //$('#article-news').html('');
+  $('#article-news').children(':not(.pager)').remove();
   var index = ultimaNovedad+instr;
   var prev = 0;
   var nxt = 0;
@@ -44,7 +46,7 @@ function frontCrearNovedades(instr){
   }
   ultimaNovedad = index;
   var html = frontCrearNovedadHTML(arrayNovedades[index],prev,nxt);
-  $('#news').append(html);
+  $('#article-news').append(html);
 }
 
 $(document).ready(function(){
