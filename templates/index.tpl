@@ -281,8 +281,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="box-servicios col-md-8 col-md-offset-3 box-shadow none-display">
-            <div class="col-md-6">
+          <div class="box-servicios col-xs-12 col-md-8 col-md-offset-3 box-shadow none-display">
+            <div class="col-xs-6">
               <div class="servicios servicios-left">
                 <i class="fa fa-users fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-habitacionesfamiliares.png" alt="Habitaciones Familiares"> -->
@@ -299,7 +299,7 @@
                 <span>Albergue abierto 24hs</span>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xs-6">
               <div class="servicios servicios-right">
                 <span>Se admiten viajeron solos</span>
                 <i class="fa fa-user fa-3x" aria-hidden="true"></i>
@@ -319,8 +319,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="box-servicios col-md-8 col-md-offset-1 box-shadow none-display">
-            <div class="col-md-6">
+          <div class="box-servicios col-xs-12 col-md-8 col-md-offset-1 box-shadow none-display">
+            <div class="col-xs-6">
               <div class="servicios servicios-left">
                 <i class="fa fa-television fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-tv.png" alt="Televisor"> -->
@@ -337,7 +337,7 @@
                 <span>Tienda en el albergue o cerca</span>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xs-6">
               <div class="servicios servicios-right">
                 <span>Salas comunes</span>
                 <i class="fa fa-comment fa-3x" aria-hidden="true"></i>
@@ -357,8 +357,8 @@
           </div>
         </div>
         <div class="row">
-          <div class="box-servicios col-md-8 col-md-offset-3 box-shadow none-display">
-            <div class="col-md-6">
+          <div class="box-servicios col-xs-12 col-md-8 col-md-offset-3 box-shadow none-display">
+            <div class="col-xs-6">
               <div class="servicios servicios-left">
                 <i class="fa fa-bicycle fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-bicicleta.png" alt="Bicicleta"> -->
@@ -375,7 +375,7 @@
                 <span>Servicios de lavanderia</span>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xs-6">
               <div class="servicios servicios-right">
                 <span>Deportes</span>
                 <i class="fa fa-futbol-o fa-3x" aria-hidden="true"></i>
