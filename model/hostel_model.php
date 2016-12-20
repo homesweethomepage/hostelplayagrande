@@ -89,8 +89,8 @@ class HostelModel {
 
   function agregarNovedad($novedad){
     $consulta = $this->db->prepare('INSERT INTO novedad(novedad,cuerpo) VALUES(?,?)');
-    $string = "<p>".ereg_replace("(\r\n\r\n|\n\n|\r\r)", "</p><p>", $novedad['cuerpo'])."</p>";
-    $consulta->execute(array($novedad['novedad'],$string));
+    // $string = "<p>".str_replace("\n", "</p><p>", $novedad['cuerpo'])."</p>";
+    $consulta->execute(array($novedad['novedad'],$novedad['cuerpo']));
   }
 
   function borrarNovedad($id_novedad){

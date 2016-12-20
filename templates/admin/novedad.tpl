@@ -77,7 +77,7 @@
               <label for="imagesToUpload">Imágenes</label>
               <input type="file" name="imagesToUpload[]" id="imagesToUpload" required/>
             </div>
-            <input type="text" class="form-control hidden" id="novedadId" name="id" value="{$novedad['id']}" required>
+            <input type="text" class="form-control hidden" id="idnovedad" name="id" value="{$novedad['id']}" required>
 
             <button id="js-btn-modificar-novedad" type="submit" class="btn btn-default">Modificar Novedad</button>
           </form>

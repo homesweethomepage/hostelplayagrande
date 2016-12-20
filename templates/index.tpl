@@ -530,9 +530,9 @@
       </div>
       <article id="article-news">
         <ul class="pager">
-          <li class="previous"><a id="#nov-prev" class="inactive" href="#"><i class="fa fa-caret-left fa-3x" aria-hidden="true"></i>
+          <li class="previous"><a id="nov-prev" class="inactive" href="#"><i class="fa fa-caret-left fa-3x" aria-hidden="true"></i>
 </a></li>
-          <li class="next"><a id="#nov-nxt" href="#"><i class="fa fa-caret-right fa-3x" aria-hidden="true"></i>
+          <li class="next"><a id="nov-nxt" class="inactive" href="#"><i class="fa fa-caret-right fa-3x" aria-hidden="true"></i>
 </a></li>
         </ul>
         <!-- ACA VA EL TEMPLATE -->
