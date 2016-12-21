@@ -595,7 +595,7 @@
         <div class="form-group col-md-8 col-md-offset-2">
           <div class="alert alert-success hidden" role="alert" id="contacto-success-message">Enviado con éxito! <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Gracias por contactarse con nosotros, nos comunicaremos a la brevedad.</div>
           <div class="alert alert-danger hidden" role="alert" id="contacto-error-message">Error al enviar la consulta! <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Intente nuevamente en unos minutos.</div>
-          <div class="alert alert-info hidden" role="alert" id="contacto-info-message">Debe completar todos los campos.</div>
+          <div class="alert alert-danger hidden" role="alert" id="contacto-info-message">Debe completar todos los campos.</div>
         </div>
 
         <!-- Button -->

@@ -116,6 +116,13 @@ $("#input-fecha-check-out" ).change(function() {
 $("#boton-reserva").click(function(event) {
     event.preventDefault();
     var form = event.target;
+    var nombre = "";
+    var apellido = "";
+    var mail = "";
+    var male = "";
+    var female = "";
+    var hostel = "";
+    var room = "";
     var nombre = $("#first_name").val();
     var apellido = $("#last_name").val();
     var mail = $("#email").val();
@@ -123,28 +130,33 @@ $("#boton-reserva").click(function(event) {
     var female = $("#female").val();
     var hostel = $("#hostel").val();
     var room = $("#room").val();
-    var data = {
-      "first_name": nombre,
-      "last_name": apellido,
-      "email": mail,
-      "male": male,
-      "female": female,
-      "hostel": hostel,
-      "room": room,
-      "checkIn": checkIn,
-      "checkOut": checkOut
-    };
-    $.ajax({
-        type: "POST",
-        url: "reserva.php",
-        data: data,
-        success: function(){
-          botonConsulta('Consulta Enviada <br> Exitosamente!','btnSuccess');
-        },
-        error:function () {
-          botonConsulta('Error en servidor! <br> Consulta no Enviada','btnError');
-        }
-    });
+    if(nombre!=""&&apellido!=""&&mail!=""&&male!=""&&female!=""&&hostel!=""&&room!=""){
+      var data = {
+        "first_name": nombre,
+        "last_name": apellido,
+        "email": mail,
+        "male": male,
+        "female": female,
+        "hostel": hostel,
+        "room": room,
+        "checkIn": checkIn,
+        "checkOut": checkOut
+      };
+      $.ajax({
+          type: "POST",
+          url: "reserva.php",
+          data: data,
+          success: function(){
+            botonConsulta('Consulta Enviada <br> Exitosamente!','btnSuccess');
+          },
+          error:function () {
+            botonConsulta('Error en servidor! <br> Consulta no Enviada','btnError');
+          }
+      });
+    }
+    else {
+      botonConsulta('Completar <br> todos los campos!','btnWarning');
+    }
 });
 
 function botonConsulta(mensaje,clase){
