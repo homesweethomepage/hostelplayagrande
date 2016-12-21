@@ -628,7 +628,6 @@
   <script src="js/map.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/animate.js"></script>
-  <script src="js/date.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/descripciones.js"></script>
   <script src="js/reserva.js"></script>
