@@ -510,11 +510,13 @@
       </div><!-- ./SLIDES -->
       <!-- CONTROLES -->
       <a class="carousel-control left" href="#carousel-tarifas" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
         <span class="sr-only">Previous</span>
       </a>
       <a class="carousel-control right" href="#carousel-tarifas" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+        <i class="fa fa-chevron-right" aria-hidden="true"></i>
         <span class="sr-only">Next</span>
       </a><!-- ./CONTROLES -->
     </div>
@@ -549,14 +551,14 @@
           <h1>Contacto</h1>
         </div>
       </div>
-      <form class="row form-blue" action="contactos">
+      <form class="row form-blue" action="#">
 
         <div class="form-group col-md-4 col-md-offset-2">
           <label class="control-label">Nombre</label>
           <div class="inputGroupContainer">
             <div class="input-group box-shadow">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input  name="first_name" placeholder="Nombre" class="form-control"  type="text">
+              <span class="input-group-addon"><i class="fa fa-user" aria-hidden="true"></i></span>
+              <input id="contacto-nombre" name="nombre" class="form-control"  type="text">
             </div>
           </div>
         </div>
@@ -565,8 +567,8 @@
           <label for="mail" class="control-label">Mail</label>
           <div class="inputGroupContainer">
             <div class="input-group box-shadow">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input name="mail" type="email" class="form-control">
+              <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+              <input id="contacto-email" name="mail" type="email" class="form-control">
             </div>
           </div>
         </div>
@@ -575,8 +577,8 @@
           <label for="asunto" class="control-label">Asunto</label>
           <div class="inputGroupContainer">
             <div class="input-group box-shadow">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input type="text" class="form-control">
+              <span class="input-group-addon"><i class="fa fa-comment" aria-hidden="true"></i></span>
+              <input id="contacto-asunto" type="text" class="form-control">
             </div>
           </div>
         </div>
@@ -585,20 +587,22 @@
           <label for="comentario" class="control-label">Comentario</label>
           <div class="inputGroupContainer">
             <div class="input-grupo box-shadow">
-            <textarea name="comentario" id="" cols="30" rows="10" class="form-control"></textarea>
+            <textarea id="contacto-comentario" name="comentario" cols="30" rows="10" class="form-control"></textarea>
             </div>
           </div>
         </div>
 
         <div class="form-group col-md-8 col-md-offset-2">
-          <div class="alert alert-success" role="alert" id="success_message">Enviado con éxito! <i class="glyphicon glyphicon-thumbs-up"></i> Gracias por contactarse con nosotros, nos comunicaremos a la brevedad.</div>
+          <div class="alert alert-success hidden" role="alert" id="contacto-success-message">Enviado con éxito! <i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Gracias por contactarse con nosotros, nos comunicaremos a la brevedad.</div>
+          <div class="alert alert-danger hidden" role="alert" id="contacto-error-message">Error al enviar la consulta! <i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Intente nuevamente en unos minutos.</div>
+          <div class="alert alert-info hidden" role="alert" id="contacto-info-message">Debe completar todos los campos.</div>
         </div>
 
         <!-- Button -->
         <div class="form-group col-md-8 col-md-offset-2">
           <label class="control-label"></label>
           <div>
-            <button id="boton-comentario" type="submit" class="btn btn-enviar-blue pull-right box-shadow">Enviar <span class="glyphicon glyphicon-send"></span></button>
+            <button id="boton-comentario" type="submit" class="btn btn-enviar-blue pull-right box-shadow">Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i></button>
           </div>
         </div>
 
@@ -631,6 +635,7 @@
   <script src="js/modal.js"></script>
   <script src="js/descripciones.js"></script>
   <script src="js/reserva.js"></script>
+  <script src="js/contacto.js"></script>
   <script src="js/novedades.js"></script>
 </body>
 </html>
