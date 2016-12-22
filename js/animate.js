@@ -16,9 +16,16 @@ const classAnimateReservaUp = "slideOutUp";
 const noneDisplay = "none-display";
 var clickReserva = false;
 var inAnimateReserva = true;
+var inAnimateHostel = false;
 var inTransition = false;
 //var endAnimate = "webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd";
 const responsiveWidth = 768;
+const activeHostel = 'descripcion-activa';
+var $btnHostel = $(".box-hostel-titulo");
+var $imgHostel = $("#img-descripcion");
+const urlImgHostel = {playagrande: 'images/descripciones/Playa Grande.jpg', austral: 'images/descripciones/Austral.jpg', suites: 'images/descripciones/Suites.jpg'}
+var animateClose = 'outUp';
+var animateOpen = 'inDown';
 
 function AnimateReserva(classAnimate, hasDisplay) {
 	inAnimateReserva = true;
@@ -51,10 +58,7 @@ function AnimateService(scrollPos) {
 }
 
 function AnimateLocation(scrollPos) {
-	console.log("entro2");
-	console.log(scrollPos,$locationLeft.position().top);
 	if (scrollPos >= $locationLeft.position().top - 450) {
-		console.log("entro3");
 		$locationLeft.addClass('bounceInLeft');
 		$locationLeft.removeClass(noneDisplay);
 	};
@@ -93,7 +97,6 @@ $(document).ready(function () {
 	console.log(scrollPos);
 
 	if (w >= responsiveWidth) {
-		console.log("entro");
 		var hasDisplay = $boxReserva.hasClass(noneDisplay);
 		AnimateReserva(classAnimateReservaDown, hasDisplay);
 	} else {
@@ -164,27 +167,54 @@ $("#logo a").on("click", function (e){
 	};
 })
 
-$(".box-hostel-titulo").click(function(){
-	if($(this).hasClass("descripcion-activa")){
-		$(this).find("i").removeClass("fa-minus").addClass("fa-plus");
-		$(this).removeClass("descripcion-activa");
-	}
-	else {
-		$(".box-hostel-desc").find(".box-hostel-titulo").removeClass("descripcion-activa");
-		$(".box-hostel-desc").find("i").removeClass("fa-minus").addClass("fa-plus");
-		if($(this).find(".pg-descr").html()[0]=="P"){
-			$("#img-descripcion").attr("src","images/descripciones/Playa Grande.jpg");
-		}
-		else {
-			if($(this).find(".pg-descr").html()[0]=="A"){
-				$("#img-descripcion").attr("src","images/descripciones/Austral.jpg");
-			}
-			else {
-				$("#img-descripcion").attr("src","images/descripciones/Suites.jpg");
-			}
-		}
+$btnHostel.on('click', function (){
 
-		$(this).find("i").addClass("fa-minus");
-		$(this).addClass("descripcion-activa");
-	}
+	if (!inAnimateHostel) {
+		var $boxDescription = $(this).children('.box-descripcion');
+		var $hostelIcon = $(this).children('.box-titulo').children('h3').children('i');
+		var $hostelLetter = $(this).children('.box-titulo').children('h3').html()[0];
+		var $thisHostel = $(this);
+		if(!$(this).hasClass(activeHostel)){
+			inAnimateHostel = true;
+			var $boxDescriptionActive = $('.box-hostel-titulo.descripcion-activa').children('.box-descripcion');
+			var $hostelIconActive = $('.box-hostel-titulo.descripcion-activa').children('.box-titulo').children('h3').children('i');
+			var $thisHostelActive = $('.box-hostel-titulo.descripcion-activa');
+			$boxDescriptionActive.addClass(animateClose).one(endAnimate, function () {
+				$thisHostelActive.removeClass(activeHostel);
+				$hostelIconActive.removeClass("fa-minus").addClass("fa-plus");
+				$(this).removeClass(animateClose);
+				$boxDescription.addClass(animateOpen).one(endAnimate, function () {
+					$thisHostel.addClass(activeHostel);
+					$hostelIcon.removeClass("fa-plus").addClass("fa-minus");
+					$(this).removeClass(animateOpen);
+					inAnimateHostel = false;
+				});
+			});
+			if($hostelLetter == "P"){
+				$imgHostel.addClass('fadeOut').one(endAnimate, function () {
+					$(this).attr("src", urlImgHostel.playagrande);
+					$(this).removeClass('fadeOut');
+					$(this).addClass('fadeIn').one(endAnimate, function () {
+						$(this).removeClass('fadeIn');
+					})
+				})
+			} else if($hostelLetter == "A") {
+				$imgHostel.addClass('fadeOut').one(endAnimate, function () {
+					$(this).attr("src", urlImgHostel.austral);
+					$(this).removeClass('fadeOut');
+					$(this).addClass('fadeIn').one(endAnimate, function () {
+						$(this).removeClass('fadeIn');
+					})
+				})
+			} else {
+				$imgHostel.addClass('fadeOut').one(endAnimate, function () {
+					$(this).attr("src", urlImgHostel.suites);
+					$(this).removeClass('fadeOut');
+					$(this).addClass('fadeIn').one(endAnimate, function () {
+						$(this).removeClass('fadeIn');
+					})
+				})
+			}
+		}
+	};
 });

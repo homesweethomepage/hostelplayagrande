@@ -35,6 +35,32 @@
   animation-duration: 1s
   animation-fill-mode: both */
   
+.fadeOut
+  animation-name fadeOut
+  animation-duration 1s
+  animation-fill-mode both
+  animation-iteration-count 1
+  
+.fadeIn
+  animation-name fadeIn
+  animation-duration 1s
+  animation-fill-mode both
+  animation-iteration-count 1
+  
+.inDown
+  animation-name inDown
+  animation-duration 1s
+  animation-fill-mode both
+  animation-iteration-count 1
+  animation-timing-function ease-in
+
+.outUp
+  animation-name outUp
+  animation-duration 1s
+  animation-fill-mode both
+  animation-iteration-count 1
+  animation-timing-function ease-out
+  
 .slideInDown
 	animation-name slideInDown
 	animation-duration 1.5s
@@ -75,35 +101,40 @@
   animation-duration 0.6s
   animation-iteration-count 1
   
+@keyframes fadeOut
+  0%
+    opacity 1
+
+  100%
+    opacity 0.5
+    
+@keyframes fadeIn
+  0%
+    opacity 0.5
+
+  100%
+    opacity 1
+
 @keyframes inDown
   from
     max-height 0px
-    
-  1%
     border 1px solid $medium-blue
     border-top none
     padding 10px 10px 0
     
   to
-    max-height 1000px
+    border 1px solid $medium-blue
+    border-top none
+    padding 10px 10px 0
+    max-height 400px
     
 @keyframes outUp
   from
-    max-height 1000px
-    border 1px solid $medium-blue
-    border-top none
+    max-height 400px
     padding 10px 10px 0
-    
-  98%
-    border 1px solid $medium-blue
-    border-top none
-    padding 10px 10px 0
-  
-  99%
-    border none
-    padding 0 10px 0
     
   to
+    padding 0px 10px 0
     max-height 0px
   
 @keyframes zoomIn
