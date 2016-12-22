@@ -73,10 +73,10 @@
               <textarea class="form-control" rows="6" id="cuerpo" name="cuerpo" required>{$novedad['cuerpo']}</textarea>
             </div>
 
-            <div class="form-group">
-              <label for="imagesToUpload">Imágenes</label>
-              <input type="file" name="imagesToUpload[]" id="imagesToUpload" required/>
-            </div>
+            <!-- <div class="form-group">
+              <label for="imagesModToUpload">Imágenes</label>
+              <input type="file" name="imagesModToUpload[]" id="imagesModToUpload" required/>
+            </div> -->
             <input type="text" class="form-control hidden" id="idnovedad" name="id" value="{$novedad['id']}" required>
 
             <button id="js-btn-modificar-novedad" type="submit" class="btn btn-default">Modificar Novedad</button>

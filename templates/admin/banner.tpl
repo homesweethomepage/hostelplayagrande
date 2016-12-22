@@ -68,6 +68,8 @@
 
             <form id="submitBanner" action="index.php?action=modificar_banner" method="POST" enctype="multipart/form-data">
 
+              <div class="alert alert-info hidden" role="alert" id="abm-info-message">Seleccionar una imagen.</div>
+
               <div class="form-group">
                 <input type="file" name="slideToUpload[]" id="slideToUpload" required/>
               </div>

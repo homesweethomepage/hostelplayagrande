@@ -1,4 +1,4 @@
-var archivos;
+var archivos = null;
 
 $("#imagesToUpload").on("change",
   function(ev)
@@ -46,22 +46,28 @@ function loadingOff(){
 
 function agregarNovedad(novedad){
   loadingOn();
-  $.ajax({
-    method: 'POST',
-    url:'api/novedad',
-    datatype: 'JSON',
-    data: novedad,
-    success: function(){
-      getLastId();
-      loadingOff();
-    },
-    error: function () {
-      alert('Error al agregar la novedad');
-    }
-  });
+  if(archivos!=null){
+    $.ajax({
+      method: 'POST',
+      url:'api/novedad',
+      datatype: 'JSON',
+      data: novedad,
+      success: function(){
+        getLastId();
+        loadingOff();
+      },
+      error: function () {
+        alert('Error al agregar la novedad');
+      }
+    });
+  }
+  else {
+    loadingOff();
+    $("#abm-info-message").removeClass("hidden");
+  }
 }
 
-function borrarNovedad(idnovedad){
+function borrarNovedad(idnovedad,padre){
   loadingOn();
   $.ajax({
     method: 'DELETE',
@@ -69,6 +75,7 @@ function borrarNovedad(idnovedad){
     datatype: 'JSON',
     success: function(){
       loadingOff();
+      padre.css( "opacity", "0.3" );
     },
     error: function () {
       alert('Error al borrar la novedad');
@@ -141,7 +148,7 @@ $(document).ready(function(){
 
   $('body').on('click','a.js-borrar-novedad', function(event){
     event.preventDefault();
-    borrarNovedad(this.getAttribute('idnovedad'));
+    borrarNovedad(this.getAttribute('idnovedad'),$(this).parent());
   });
 
 });

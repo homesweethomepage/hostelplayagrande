@@ -1,4 +1,4 @@
-var gal;
+var gal = null;
 var lastID;
 
 $("#imgGaleriaToUpload").on("change",
@@ -35,7 +35,7 @@ function crearGaleria(){
   });
 }
 
-function borrarImgGaleria(idImgGaleria){
+function borrarImgGaleria(idImgGaleria,padre){
   loadingOn();
   $.ajax({
     method: 'DELETE',
@@ -43,6 +43,7 @@ function borrarImgGaleria(idImgGaleria){
     datatype: 'JSON',
     success: function(){
       loadingOff();
+      padre.css( "opacity", "0.3" );
     },
     error: function () {
       alert('Error al borrar la imagen');
@@ -52,25 +53,31 @@ function borrarImgGaleria(idImgGaleria){
 
 function subirImgGaleria(){
   loadingOn();
-  var img = new FormData();
-  $.each(gal, function(key, value)
-  {
-    img.append(key, value);
-  });
-  $.ajax({
-    type: "POST",
-    url: "index.php?action=agregar_imagen_galeria&id_hostel=" + lastID,
-    data: img,
-    cache: false,
-    processData: false,
-    contentType: false,
-    success: function(){
-      loadingOff();
-    },
-    error: function () {
-      alert('Error al subir imagenes a la galeria');
-    }
-  });
+  if(gal!=null){
+    var img = new FormData();
+    $.each(gal, function(key, value)
+    {
+      img.append(key, value);
+    });
+    $.ajax({
+      type: "POST",
+      url: "index.php?action=agregar_imagen_galeria&id_hostel=" + lastID,
+      data: img,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function(){
+        loadingOff();
+      },
+      error: function () {
+        alert('Error al subir imagenes a la galeria');
+      }
+    });
+  }
+  else {
+    loadingOff();
+    $("#abm-info-message").removeClass("hidden");
+  }
 }
 
 function loadingOn(){
@@ -89,7 +96,7 @@ $(document).ready(function(){
 
   $('body').on('click','a.js-borrar-imgGaleria', function(event){
     event.preventDefault();
-    borrarImgGaleria(this.getAttribute('idImgGaleria'));
+    borrarImgGaleria(this.getAttribute('idImgGaleria'),($(this).parent().parent().parent()));
   });
 
   $('#js-refresh-galeria').on('click', function(event){

@@ -1,4 +1,4 @@
-var slide;
+var slide = null;
 
 $("#slideToUpload").on("change",
   function(ev)
@@ -19,22 +19,28 @@ function loadingOff(){
 
 function modificarSlide(numero){
   loadingOn();
-  var sli = new FormData();
-  $.each(slide, function(key, value)
-  {
-    sli.append(key, value);
-  });
-  $.ajax({
-    type: "POST",
-    url: "index.php?action=modificar_banner&slide=" + numero,
-    data: sli,
-    cache: false,
-    processData: false,
-    contentType: false,
-    success: function(){
-      loadingOff();
-    }
-  });
+  if(slide!=null){
+    var sli = new FormData();
+    $.each(slide, function(key, value)
+    {
+      sli.append(key, value);
+    });
+    $.ajax({
+      type: "POST",
+      url: "index.php?action=modificar_banner&slide=" + numero,
+      data: sli,
+      cache: false,
+      processData: false,
+      contentType: false,
+      success: function(){
+        loadingOff();
+      }
+    });
+  }
+  else {
+    loadingOff();
+    $("#abm-info-message").removeClass("hidden");
+  }
 }
 
 $(document).ready(function(){

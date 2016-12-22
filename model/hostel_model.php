@@ -119,6 +119,8 @@ class HostelModel {
 
   function modificarNovedad($id_novedad,$novedad,$cuerpo){
     $consulta = $this->db->prepare('UPDATE novedad SET novedad=?, cuerpo=? WHERE id=?');
+    $string = str_replace("</p>", "\n", $cuerpo);
+    $string = str_replace("\n", "</p>", $cuerpo);
     $consulta->execute(array($novedad,$cuerpo,$id_novedad));
   }
 
@@ -194,7 +196,7 @@ class HostelModel {
     $consultaImg = $this->db->prepare('SELECT * FROM galeria WHERE id=?');
     $consultaImg->execute(array($idImgGaleria));
     $imagen = $consultaImg->fetch();
-    unlink('../uploaded/imagenes/galeria/'.$imagen['ruta']);
+    unlink('../'.$imagen['ruta']);
     $consulta = $this->db->prepare('DELETE FROM galeria WHERE id=?');
     $consulta->execute(array($idImgGaleria));
   }

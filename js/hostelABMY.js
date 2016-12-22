@@ -1,4 +1,4 @@
-var imgActivity;
+var imgActivity = null;
 
 $("#activityToUpload").on("change",
   function(ev)
@@ -36,24 +36,31 @@ function crearActivities(){
 
 function agregarActivity(activity){
   loadingOn();
-  var ruta =  $('#activityToUpload')[0].files[0].name;
-  activity = activity + '&ruta=' + ruta;
-  $.ajax({
-    method: 'POST',
-    url:'api/activity',
-    datatype: 'JSON',
-    data: activity,
-    success: function(){
-      subirImgActivity();
-      loadingOff();
-    },
-    error: function () {
-      alert('Error al agregar actividad');
-    }
-  });
+  if(imgActivity!=null){
+    var ruta =  $('#activityToUpload')[0].files[0].name;
+    activity = activity + '&ruta=' + ruta;
+    $.ajax({
+      method: 'POST',
+      url:'api/activity',
+      datatype: 'JSON',
+      data: activity,
+      success: function(){
+        subirImgActivity();
+        loadingOff();
+      },
+      error: function () {
+        alert('Error al agregar actividad');
+      }
+    });
+  }
+  else {
+    loadingOff();
+    $("#abm-info-message").removeClass("hidden");
+  }
+
 }
 
-function borrarActivity(idactivity){
+function borrarActivity(idactivity,padre){
   loadingOn();
   $.ajax({
     method: 'DELETE',
@@ -61,6 +68,7 @@ function borrarActivity(idactivity){
     datatype: 'JSON',
     success: function(){
       loadingOff();
+      padre.css( "opacity", "0.3" );
     },
     error: function () {
       alert('Error al borrar actividad');
@@ -100,7 +108,7 @@ $(document).ready(function(){
 
   $('body').on('click','a.js-borrar-activity', function(event){
     event.preventDefault();
-    borrarActivity(this.getAttribute('idactivity'));
+    borrarActivity(this.getAttribute('idactivity'),$(this).parent().parent());
   });
 
   $('#js-refresh-activities').on('click', function(event){
