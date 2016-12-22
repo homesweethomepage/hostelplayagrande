@@ -9,14 +9,16 @@ var $contactSection = $('#contacts');
 var arrSections = [$hostelSection, $serviceSection, $locationSection, $actividadSection, $tarifaSection, $newsSection, $contactSection];
 var $boxReserva = $('.box-reserva');
 var $boxService = $('.box-servicios');
-var classAnimateReservaDown = "slideInDown";
-var classAnimateReservaUp = "slideOutUp";
-var noneDisplay = "none-display";
+var $locationLeft = $('.ubicacionLeft');
+var $locationRight = $('.ubicacionRight');
+const classAnimateReservaDown = "slideInDown";
+const classAnimateReservaUp = "slideOutUp";
+const noneDisplay = "none-display";
 var clickReserva = false;
 var inAnimateReserva = true;
 var inTransition = false;
-var endAnimate = "webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd";
-var responsiveWidth = 768;
+//var endAnimate = "webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd";
+const responsiveWidth = 768;
 
 function AnimateReserva(classAnimate, hasDisplay) {
 	inAnimateReserva = true;
@@ -48,6 +50,20 @@ function AnimateService(scrollPos) {
 	});
 }
 
+function AnimateLocation(scrollPos) {
+	console.log("entro2");
+	console.log(scrollPos,$locationLeft.position().top);
+	if (scrollPos >= $locationLeft.position().top - 450) {
+		console.log("entro3");
+		$locationLeft.addClass('bounceInLeft');
+		$locationLeft.removeClass(noneDisplay);
+	};
+	if (scrollPos >= $locationRight.position().top - 450) {
+		$locationRight.addClass('bounceInRight');
+		$locationRight.removeClass(noneDisplay);
+	};
+}
+
 function ActiveNav(scrollPos) {
 	for (var i = 0; i < arrSections.length; i++) {
 		var sectionTop = arrSections[i].position().top - 80;
@@ -74,8 +90,10 @@ function TransitionNav(target) {
 $(document).ready(function () {
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var scrollPos = $(this).scrollTop();
+	console.log(scrollPos);
 
 	if (w >= responsiveWidth) {
+		console.log("entro");
 		var hasDisplay = $boxReserva.hasClass(noneDisplay);
 		AnimateReserva(classAnimateReservaDown, hasDisplay);
 	} else {
@@ -83,6 +101,7 @@ $(document).ready(function () {
 	};
 
 	AnimateService(scrollPos);
+	AnimateLocation(scrollPos);
 
 	ActiveNav(scrollPos);
 });
@@ -104,6 +123,7 @@ $(document).on('scroll', function () {
 	};
 
 	AnimateService(scrollPos);
+	AnimateLocation(scrollPos);
 
 	ActiveNav(scrollPos);
 });
