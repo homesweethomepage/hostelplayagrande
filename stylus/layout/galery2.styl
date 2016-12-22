@@ -43,3 +43,46 @@
 
 				&:hover
 					transform scale(1.25)
+					
+	.galeryCarousel
+		background-color red
+
+		.arrowleft
+		.arrowright
+			float left
+			width 50px
+		
+		.imgCarousel
+			float left
+			overflow hidden
+			background-color rgba($black, 0.5)
+			
+			.containerCarousel
+				position relative
+				display inline-block
+				list-style-type none
+				margin 0
+				padding 0
+				width 9999px
+				height 100%
+				
+				li
+					float left
+					height 100%
+					padding 0 15px
+					
+					.box-img
+						height 100%
+						width 100%
+						overflow hidden
+						border 1px solid $orange
+
+						img
+							height 100%
+							width 100%
+							transition all 0.3s
+							cursor pointer
+
+							&:hover
+								transform scale(1.25)
+						

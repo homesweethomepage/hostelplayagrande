@@ -252,6 +252,39 @@
             <h3><a href="#">Suites</a></h3>
           </div>
         </div>
+        <div class="row galeryCarousel">
+          <div class="arrowleft"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></div>
+          <div class="imgCarousel">
+            <ul class="containerCarousel">
+              <li>
+                <div class="box-img box-shadow">
+                  <img src="{$galeria[0]['ruta']}" alt="foto de {$galeria[0]['hostel']}">    
+                </div>
+              </li>
+              <li>
+                <div class="box-img box-shadow">
+                  <img src="{$galeria[1]['ruta']}" alt="foto de {$galeria[1]['hostel']}">    
+                </div>
+              </li>
+              <li>
+                <div class="box-img box-shadow">
+                  <img src="{$galeria[2]['ruta']}" alt="foto de {$galeria[2]['hostel']}">    
+                </div>
+              </li>
+              <li>
+                <div class="box-img box-shadow">
+                  <img src="{$galeria[3]['ruta']}" alt="foto de {$galeria[3]['hostel']}">    
+                </div>
+              </li>
+              <li>
+                <div class="box-img box-shadow">
+                  <img src="{$galeria[4]['ruta']}" alt="foto de {$galeria[4]['hostel']}">    
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
+        </div>
         <div class="row centerimg">
           {foreach $galeria as $itemGaleria}
           <div class="foto-galery col-md-4 col-sm-6">
@@ -407,7 +440,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 ubicacionLeft none-display">
           <!-- <h3>Ubicación</h3> -->
           <div class="playa-loc">
             <h3>PLAYA GRANDE</h3>
@@ -425,7 +458,7 @@
             <span><i class="fa fa-phone fa-lg" aria-hidden="true"></i>+54 (223) 451-2225</span>
           </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 ubicacionRight none-display">
           <div id="map" class="box-shadow"></div>
         </div>
       </div>
@@ -627,11 +660,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
   <script src="js/map.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/animate.js"></script>
   <script src="js/date.js"></script>
   <script src="js/modal.js"></script>
   <script src="js/descripciones.js"></script>
   <script src="js/reserva.js"></script>
+  <script src="js/carouselgalery.js"></script>
   <script src="js/novedades.js"></script>
+  <script src="js/animate.js"></script>
 </body>
 </html>
