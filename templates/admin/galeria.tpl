@@ -68,6 +68,8 @@
 
             <form id="submitImgGaleria" method="POST" enctype="multipart/form-data">
 
+              <div class="alert alert-info hidden" role="alert" id="abm-info-message">Seleccionar una imagen.</div>
+
               <div class="form-group">
                 <label for="imgGaleriaToUpload">Imágenes</label>
                 <input type="file" name="imgGaleriaToUpload[]" id="imgGaleriaToUpload" required multiple/>
@@ -75,10 +77,9 @@
 
               <div class="form-group">
                 <label for="hostel">Hostel:</label>
-                <label class="radio-inline"><input type="radio" name="hostel" value="hpg" required>Playa Grande</label>
-                <label class="radio-inline"><input type="radio" name="hostel" value="hpgs" required>Playa Grande Suites</label>
-                <label class="radio-inline"><input type="radio" name="hostel" value="hpds" required>Playas del Sur</label>
-                <label class="radio-inline"><input type="radio" name="hostel" value="todos" checked required>Todos</label>
+                <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande" checked required>Playa Grande</label>
+                <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande Austral" required>Austral</label>
+                <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande Suites" required>Suites</label>
               </div>
 
               <button id="js-button-galeria" type="submit" class="btn btn-default">Agregar Imagenes</button>

@@ -77,6 +77,8 @@
               <textarea class="form-control" rows="6"  id="cuerpo" name="cuerpo" placeholder="Cuerpo" required></textarea>
             </div>
 
+            <div class="alert alert-info hidden" role="alert" id="abm-info-message">Seleccionar una imagen.</div>
+
             <div class="form-group">
               <label for="imagesToUpload">Imágenes</label>
               <input type="file" name="imagesToUpload[]" id="imagesToUpload" required/>

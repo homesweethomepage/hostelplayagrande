@@ -72,6 +72,8 @@
                 <input type="text" class="form-control" id="actividad" name="actividad" placeholder="Nombre" required>
               </div>
 
+              <div class="alert alert-info hidden" role="alert" id="abm-info-message">Seleccionar una imagen.</div>
+
               <div class="form-group">
                 <label for="actividadToUpload">Imágen</label>
                 <input type="file" name="actividadToUpload[]" id="actividadToUpload" required/>

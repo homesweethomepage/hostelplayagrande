@@ -1,11 +1,11 @@
-var archivosMod;
-
-$("#imagesToUpload").on("change",
-  function(ev)
-  {
-    archivosMod = ev.target.files;
-  }
-);
+// var archivosMod = null;
+//
+// $("#imagesModToUpload").on("change",
+//   function(ev)
+//   {
+//     archivosMod = ev.target.files;
+//   }
+// );
 
 function modificarNovedad(idnovedad,novedad,cuerpo){
   loadingOn();
@@ -15,8 +15,10 @@ function modificarNovedad(idnovedad,novedad,cuerpo){
     datatype: 'JSON',
     success: function(){
       loadingOff();
-      borrarImagen(idnovedad);
-      crearImagen(idnovedad);
+      // if(archivosMod!=null){
+      //   borrarImagen(idnovedad);
+      //   crearImagen(idnovedad);
+      // }
       setTimeout(function(){window.location.href = 'http://localhost/proyectos/hostel/index.php?action=admin_hostel';},2000);
     },
     error: function () {
@@ -25,37 +27,37 @@ function modificarNovedad(idnovedad,novedad,cuerpo){
   });
 }
 
-function borrarImagen(id){
-  var img = new FormData();
-  $.each(archivosMod, function(key, value)
-  {
-    img.append(key, value);
-  });
-  $.ajax({
-    type: "POST",
-    url: "index.php?action=borrar_imagen&id_novedad=" + id,
-    data: img,
-    cache: false,
-    processData: false,
-    contentType: false,
-  });
-}
-
-function crearImagen(lastId){
-  var imgMod = new FormData();
-  $.each(archivosMod, function(key, value)
-  {
-    imgMod.append(key, value);
-  });
-  $.ajax({
-    type: "POST",
-    url: "index.php?action=agregar_imagenes&id_novedad=" + lastId,
-    data: imgMod,
-    cache: false,
-    processData: false,
-    contentType: false,
-  });
-}
+// function borrarImagen(id){
+//   var img = new FormData();
+//   $.each(archivosMod, function(key, value)
+//   {
+//     img.append(key, value);
+//   });
+//   $.ajax({
+//     type: "POST",
+//     url: "index.php?action=borrar_imagen&id_novedad=" + id,
+//     data: img,
+//     cache: false,
+//     processData: false,
+//     contentType: false,
+//   });
+// }
+//
+// function crearImagen(lastId){
+//   var imgMod = new FormData();
+//   $.each(archivosMod, function(key, value)
+//   {
+//     imgMod.append(key, value);
+//   });
+//   $.ajax({
+//     type: "POST",
+//     url: "index.php?action=agregar_imagenes&id_novedad=" + lastId,
+//     data: imgMod,
+//     cache: false,
+//     processData: false,
+//     contentType: false,
+//   });
+// }
 
 function loadingOn(){
   $("#loading-image")
@@ -76,6 +78,9 @@ $(document).ready(function(){
   $('#js-btn-modificar-novedad').on('click', function(event){
     event.preventDefault();
     var mod = $("#modNovedad").serializeArray();
+    console.log(mod[1].value);
+    mod[1].value = mod[1].value.replace(/\r?\n/g, '\n');
+    console.log(mod[1].value);
     modificarNovedad(mod[2].value,mod[0].value,mod[1].value);
   });
 
