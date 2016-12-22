@@ -5,49 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playa Grande Hostels</title>
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/font-awesome.min.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <link href="../css/font-awesome.min.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
   <link rel="shortcut icon" href="images/ico/favicon.png">
 </head>
 <body>
-  <!-- HEADER -->
   <header>
-    <nav class="navbar navbar-default navbar-fixed-top box-shadow" role="banner">
-      <div class="container">
-        <!-- COLLAPSED BAR -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div><!-- ./COLLAPSED BAR -->
-
-        <div id="logo" class="navbar-brand">
-          <a href="#"><img src="images/logo4.png" alt="Logo Hostel Playa Grande" class="img-responsive"/></a>
-        </div>
-
-        <!-- NAV CONTENT -->
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a class="nav-item" href="#hostels">HOSTELS</a></li>
-            <li><a class="nav-item" href="#servicios">SERVICIOS</a></li>
-            <li><a class="nav-item" href="#ubicacion">Ubicacion</a></li>
-            <li><a class="nav-item" href="#actividades">Actividades</a></li>
-            <li><a class="nav-item" href="#tarifa">Tarifas</a></li>
-            <li><a class="nav-item" href="#novedades">Novedades</a></li>
-            <li><a class="nav-item" href="#contacto">Contacto</a></li>
-            <li><a class="nav-item" href="#reserva">Reservar</a></li>
-            <li class="flag-container"><a href="#"><img class="flag" src="images/ico/usa.png" /></a></li>
-            <li class="flag-container"><a href="index.html"><img class="flag" src="images/ico/arg.png" /></a></li>
-          </ul>
-        </div><!-- ./NAV CONTENT -->
-      </div>
-    </nav>
-  </header><!-- ./HEADER -->
-
+    <!-- aca va logo -->
+  </header>
 
   <section id="reservation" class="container"><!-- CONTAINER RESERVA -->
 
@@ -162,6 +128,15 @@
         </div>
 
         <div class="form-group">
+          <label for="check-out" class="col-md-4 control-label">Archivo</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="btn btn-default btn-file">
+              <input name="check-out" class="form-control" type="file" id="input-fecha-check-out">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
           <label class="col-md-4 control-label">Comentario</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
@@ -193,8 +168,8 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
-<script type="text/javascript" src="js/date.js"></script>
-<script type="text/javascript" src="js/form.js"></script>
-<script type="text/javascript" src="js/reserva.js"></script>
+<script type="text/javascript" src="../js/date.js"></script>
+<script type="text/javascript" src="../js/form.js"></script>
+<script type="text/javascript" src="../js/reserva.js"></script>
 </body>
 </html>
