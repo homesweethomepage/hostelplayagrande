@@ -43,11 +43,12 @@ class HostelApi extends ApiBase {
         break;
       case 'POST':
         $this->checkSession();
-        if(isset($_POST['novedad'])) return $this->model->agregarNovedad($_POST);
-        break;
-      case 'PUT':
-        $this->checkSession();
-        if(count($this->args) > 0) return $this->model->modificarNovedad($this->args[0],$this->args[1],$this->args[2]);
+        if(isset($_POST['modificar'])){
+          return $this->model->modificarNovedad($_POST);
+        }else {
+          if(isset($_POST['novedad']))
+          return $this->model->agregarNovedad($_POST);
+        }
         break;
       default:
             return 'Verbo no soportado';

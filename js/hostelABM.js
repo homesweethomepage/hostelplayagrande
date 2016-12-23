@@ -46,6 +46,7 @@ function loadingOff(){
 
 function agregarNovedad(novedad){
   loadingOn();
+  debugger;
   if(archivos!=null){
     $.ajax({
       method: 'POST',
@@ -79,21 +80,6 @@ function borrarNovedad(idnovedad,padre){
     },
     error: function () {
       alert('Error al borrar la novedad');
-    }
-  });
-}
-
-function modificarNovedad(idnovedad,novedad,cuerpo){
-  loadingOn();
-  $.ajax({
-    method: 'PUT',
-    url:'api/novedad/' + idnovedad + '/' + novedad + '/' + cuerpo,
-    datatype: 'JSON',
-    success: function(){
-      loadingOff();
-    },
-    error: function () {
-      alert('Error al modificar la novedad');
     }
   });
 }
