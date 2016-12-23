@@ -117,11 +117,9 @@ class HostelModel {
     $consulta->execute(array($id_novedad));
   }
 
-  function modificarNovedad($id_novedad,$novedad,$cuerpo){
+  function modificarNovedad($nov){
     $consulta = $this->db->prepare('UPDATE novedad SET novedad=?, cuerpo=? WHERE id=?');
-    $string = str_replace("</p>", "\n", $cuerpo);
-    $string = str_replace("\n", "</p>", $cuerpo);
-    $consulta->execute(array($novedad,$cuerpo,$id_novedad));
+    $consulta->execute(array($nov['novedad'],$nov['cuerpo'],$nov['idnovedad']));
   }
 
   function getActividades(){

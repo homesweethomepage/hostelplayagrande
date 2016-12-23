@@ -62,22 +62,22 @@
 
           <h3>Modificar Novedad</h3>
 
-          <form id="modNovedad" action="index.php?action=modificar_novedad" method="POST" enctype="multipart/form-data">
+          <form id="modNovedad" action="#" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label for="novedad">Titulo</label>
-              <input type="text" class="form-control" id="novedad" name="novedad" value="{$novedad['novedad']}" required>
+              <input type="text" class="form-control" id="modnovedad" name="novedad" value="{$novedad['novedad']}" required>
             </div>
 
             <div class="form-group">
               <label for="novedad">Cuerpo</label>
-              <textarea class="form-control" rows="6" id="cuerpo" name="cuerpo" required>{$novedad['cuerpo']}</textarea>
+              <textarea class="form-control" rows="6" id="modcuerpo" name="cuerpo" required>{$novedad['cuerpo']}</textarea>
             </div>
 
             <!-- <div class="form-group">
               <label for="imagesModToUpload">Imágenes</label>
               <input type="file" name="imagesModToUpload[]" id="imagesModToUpload" required/>
             </div> -->
-            <input type="text" class="form-control hidden" id="idnovedad" name="id" value="{$novedad['id']}" required>
+            <input type="text" class="form-control hidden" id="modidnovedad" name="idnovedad" value="{$novedad['id']}" required>
 
             <button id="js-btn-modificar-novedad" type="submit" class="btn btn-default">Modificar Novedad</button>
           </form>
