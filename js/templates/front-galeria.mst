@@ -1,0 +1,5 @@
+<li>
+  <div class="box-img box-shadow">
+    <img src="{{ruta}}" alt="foto de {{hostel}}">
+  </div>
+</li>

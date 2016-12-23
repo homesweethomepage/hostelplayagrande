@@ -7,6 +7,9 @@ const sm = {width: 576, container: 576, gril: 2};
 const xs = {width: 0, container: 0, gril: 1};
 var $arrowLeft = $('.arrowleft a');
 var $arrowRight = $('.arrowright a');
+var imagenesGaleria = [];
+var imgWidth;
+var enAnimacion = false;
 
 function calcContainerWidth(width) {
 	var widthPadding = paddingContainer * 2;
@@ -23,18 +26,11 @@ function getRatio(width) {
 	return 3 * width / 4;
 }
 
-function setCarousel(container, img) {
-	$('.imgCarousel').width(container);
-	$('.imgCarousel').height(getRatio(img));
-	$('.containerCarousel').css({'left': -img - (paddingImg * 2)});
-	$('.containerCarousel li').width(img);
-}
-
-$(document).ready(function () {
+function setCarousels(){
 	var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var wbody = $('body').width();
 	var containerWidth;
-	var imgWidth;
+
 
 	if (w >= xl.width) {
 		containerWidth = calcContainerWidth(xl.container);
@@ -57,6 +53,51 @@ $(document).ready(function () {
 		imgWidth = calcImgWidth(containerWidth, xs.gril);
 		setCarousel(containerWidth, imgWidth);
 	};
+}
+
+function setCarousel(container, img) {
+	$('.imgCarousel').width(container);
+	$('.imgCarousel').height(getRatio(img));
+	$('.containerCarousel').css({'left': -img - (paddingImg * 2)});
+	$('.containerCarousel li').width(img);
+}
+
+function frontCrearGaleriaHTML(galeria) {
+  $.ajax({ url: "js/templates/front-galeria.mst",
+     success: function(template) {
+       var rendered = Mustache.render(template,galeria);
+       $('#carousel-galeria').append(rendered);
+      }
+    });
+}
+
+function inicGaleria(){
+  $.ajax({
+    method: 'GET',
+    url:'api/galeria',
+    datatype: 'JSON',
+    success: function(galeria){
+      imagenesGaleria = galeria;
+      $('#carousel-galeria').children().remove();
+			imagenesGaleria.forEach(function(gal){
+	      var html = frontCrearGaleriaHTML(gal);
+	      $('#carousel-galeria').append(html);
+			});
+			setCarousels();
+			setTimeout(setCarousels,2000);
+    }
+  });
+}
+
+function frontCrearGaleria(instr){
+  $('#carousel-galeria').children().remove();
+  var html = frontCrearGaleriaHTML(imagenesGaleria);
+  $('#carousel-galeria').append(html);
+}
+
+$(document).ready(function () {
+
+	inicGaleria();
 
 	$arrowLeft.on('click', function (e) {
 		e.preventDefault();
@@ -66,7 +107,6 @@ $(document).ready(function () {
 		$('.containerCarousel').animate({'left' : left_indent},
 										{queue:false, duration:500, complete: function(){
 	        									$('.containerCarousel li:first').before($('.containerCarousel li:last'));
-        										console.log($('.containerCarousel li:first'));
 	        									$('.containerCarousel').css({'left' : -imgWidth - (paddingImg * 2)});
         									}
         								});
@@ -80,7 +120,6 @@ $(document).ready(function () {
 		$('.containerCarousel').animate({'left' : left_indent},
 										{queue:false, duration:500, complete: function(){
 	        									$('.containerCarousel li:last').after($('.containerCarousel li:first'));
-        										console.log($('.containerCarousel li:first'));
 	        									$('.containerCarousel').css({'left' : -imgWidth - (paddingImg * 2)});
         									}
         								});

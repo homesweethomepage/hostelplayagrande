@@ -53,7 +53,6 @@ function frontCrearNovedades(instr){
   str = str.replace(regex, "</p><p>");
   str = "<p>"+str+"</p>";
   arrayNovedades[index].cuerpo = str;
-  console.log(str);
   var html = frontCrearNovedadHTML(arrayNovedades[index],prev,nxt);
   $('#article-news').append(html);
 }

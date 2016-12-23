@@ -255,37 +255,13 @@
         <div class="row galeryCarousel">
           <div class="arrowleft"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></div>
           <div class="imgCarousel">
-            <ul class="containerCarousel">
-              <li>
-                <div class="box-img box-shadow">
-                  <img src="{$galeria[0]['ruta']}" alt="foto de {$galeria[0]['hostel']}">    
-                </div>
-              </li>
-              <li>
-                <div class="box-img box-shadow">
-                  <img src="{$galeria[1]['ruta']}" alt="foto de {$galeria[1]['hostel']}">    
-                </div>
-              </li>
-              <li>
-                <div class="box-img box-shadow">
-                  <img src="{$galeria[2]['ruta']}" alt="foto de {$galeria[2]['hostel']}">    
-                </div>
-              </li>
-              <li>
-                <div class="box-img box-shadow">
-                  <img src="{$galeria[3]['ruta']}" alt="foto de {$galeria[3]['hostel']}">    
-                </div>
-              </li>
-              <li>
-                <div class="box-img box-shadow">
-                  <img src="{$galeria[4]['ruta']}" alt="foto de {$galeria[4]['hostel']}">    
-                </div>
-              </li>
+            <ul id="carousel-galeria" class="containerCarousel">
+
             </ul>
           </div>
           <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
         </div>
-        <div class="row centerimg">
+        <!-- <div class="row centerimg">
           {foreach $galeria as $itemGaleria}
           <div class="foto-galery col-md-4 col-sm-6">
             <div class="box-img box-shadow">
@@ -299,7 +275,7 @@
             <li class="previous"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></li>
             <li class="next"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </section><!-- ./GALERIA 2 -->
   </div>
