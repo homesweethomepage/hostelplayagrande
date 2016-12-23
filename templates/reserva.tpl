@@ -128,10 +128,14 @@
         </div>
 
         <div class="form-group">
-          <label for="check-out" class="col-md-4 control-label">Archivo</label>
+          <label class="col-md-4 control-label">Comprobante</label>
           <div class="col-md-4 inputGroupContainer">
-            <div class="btn btn-default btn-file">
-              <input name="check-out" class="form-control" type="file" id="input-fecha-check-out">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+              <div class="inputFile btn btn-default">
+                <input name="input-aux" class="form-control input-aux btn btn-default" type="text">
+                <input type="file" class="form-control input-file" name="" required/>
+              </div>
             </div>
           </div>
         </div>
