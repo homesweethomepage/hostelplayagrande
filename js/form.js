@@ -1,5 +1,21 @@
-  $(document).ready(function() {
+function getFileValue ($inputFile) {
+    if ($inputFile.val() == '') {
+        return 'Seccioné la foto del comprobante';
+    } else {
+        var file = $inputFile.val().split('\\');
+        return file[file.length - 1];
+    };
+}
 
+$(document).ready(function() {
+
+    var $inputFile = $('.input-file');
+    var $inputAux = $('.input-aux');
+    $inputAux.val(getFileValue($inputFile));
+
+    $inputFile.on('change', function () {
+        $inputAux.val(getFileValue($(this)));
+    })
 
     $('#contact_form').bootstrapValidator({
         feedbackIcons: {
