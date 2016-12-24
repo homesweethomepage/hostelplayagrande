@@ -6,7 +6,7 @@
   <div class="col-md-7 box-text-news">
     {{{cuerpo}}}
   </div>
-  <div class="col-md-5">
+  <div class="col-md-5 box-img-news">
     <div class="box-img box-shadow">
       <img class="img-responsive" src="{{imagen}}" alt="Foto {{novedad}}">
     </div>

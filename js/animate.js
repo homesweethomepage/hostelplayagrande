@@ -11,6 +11,8 @@ var $boxReserva = $('.box-reserva');
 var $boxService = $('.box-servicios');
 var $locationLeft = $('.ubicacionLeft');
 var $locationRight = $('.ubicacionRight');
+var $hostelLeft = $('.box-hostel-desc');
+var $hostelRight = $('.box-hostel-img');
 const classAnimateReservaDown = "slideInDown";
 const classAnimateReservaUp = "slideOutUp";
 const noneDisplay = "none-display";
@@ -18,7 +20,7 @@ var clickReserva = false;
 var inAnimateReserva = true;
 var inAnimateHostel = false;
 var inTransition = false;
-//var endAnimate = "webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd";
+var endAnimate = "webkitAnimationEnd mozAnimationEnd oAnimationEnd animationEnd";
 const responsiveWidth = 768;
 const activeHostel = 'descripcion-activa';
 var $btnHostel = $(".box-hostel-titulo");
@@ -68,6 +70,17 @@ function AnimateLocation(scrollPos) {
 	};
 }
 
+function AnimateHostel(scrollPos) {
+	if (scrollPos >= $hostelLeft.position().top - 450) {
+		$hostelLeft.addClass('bounceInLeft');
+		$hostelLeft.removeClass(noneDisplay);
+	};
+	if (scrollPos >= $hostelRight.position().top - 450) {
+		$hostelRight.addClass('bounceInRight');
+		$hostelRight.removeClass(noneDisplay);
+	};
+}
+
 function ActiveNav(scrollPos) {
 	for (var i = 0; i < arrSections.length; i++) {
 		var sectionTop = arrSections[i].position().top - 80;
@@ -94,7 +107,6 @@ function TransitionNav(target) {
 $(document).ready(function () {
 	w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var scrollPos = $(this).scrollTop();
-	console.log(scrollPos);
 
 	if (w >= responsiveWidth) {
 		var hasDisplay = $boxReserva.hasClass(noneDisplay);
@@ -105,6 +117,7 @@ $(document).ready(function () {
 
 	AnimateService(scrollPos);
 	AnimateLocation(scrollPos);
+	AnimateHostel(scrollPos);
 
 	ActiveNav(scrollPos);
 });
@@ -127,6 +140,7 @@ $(document).on('scroll', function () {
 
 	AnimateService(scrollPos);
 	AnimateLocation(scrollPos);
+	AnimateHostel(scrollPos);
 
 	ActiveNav(scrollPos);
 });

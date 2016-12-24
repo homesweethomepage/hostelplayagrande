@@ -13,7 +13,13 @@ var modalImg = document.getElementById("imgModal");
 var captionText = document.getElementById("imgCaption");
 
 // Get the image and insert it inside the modal - use its "alt" text as a caption
-$('.foto-galery .box-img img').on('click', function() {
+$(document).on("click","#carousel-galeria .foto-galery .box-img img",function(e){
+	gmodal.style.display = "block";
+	modalImg.src = this.src;
+	captionText.innerHTML = this.alt;
+});
+
+$(document).on("click",".box-img-news .box-img img",function(e){
 	gmodal.style.display = "block";
 	modalImg.src = this.src;
 	captionText.innerHTML = this.alt;

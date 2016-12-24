@@ -58,6 +58,10 @@ function setCarousels(){
 function setCarousel(container, img) {
 	$('.imgCarousel').width(container);
 	$('.imgCarousel').height(getRatio(img));
+	$('.arrowright').height(getRatio(img));
+	$('.arrowleft').height(getRatio(img));
+	$('.arrowright a').css({'line-height': getRatio(img) + 'px'});
+	$('.arrowleft a').css({'line-height': getRatio(img) + 'px'});
 	$('.containerCarousel').css({'left': -img - (paddingImg * 2)});
 	$('.containerCarousel li').width(img);
 }
@@ -101,28 +105,34 @@ $(document).ready(function () {
 
 	$arrowLeft.on('click', function (e) {
 		e.preventDefault();
+		if (!enAnimacion) {
+			enAnimacion = true;
+			var left_indent = parseInt($('.containerCarousel').css('left')) + imgWidth + (paddingImg * 2);
 
-		var left_indent = parseInt($('.containerCarousel').css('left')) + imgWidth + (paddingImg * 2);
-
-		$('.containerCarousel').animate({'left' : left_indent},
-										{queue:false, duration:500, complete: function(){
-	        									$('.containerCarousel li:first').before($('.containerCarousel li:last'));
-	        									$('.containerCarousel').css({'left' : -imgWidth - (paddingImg * 2)});
-        									}
-        								});
+			$('.containerCarousel').animate({'left' : left_indent},
+											{queue:false, duration:500, complete: function(){
+		        									$('.containerCarousel li:first').before($('.containerCarousel li:last'));
+		        									$('.containerCarousel').css({'left' : -imgWidth - (paddingImg * 2)});
+		        									enAnimacion = false;
+	        									}
+	        								});
+		};
 	});
 
 	$arrowRight.on('click', function (e) {
 		e.preventDefault();
+		if (!enAnimacion) {
+			enAnimacion = true;
+			var left_indent = parseInt($('.containerCarousel').css('left')) - imgWidth - (paddingImg * 2);
 
-		var left_indent = parseInt($('.containerCarousel').css('left')) - imgWidth - (paddingImg * 2);
-
-		$('.containerCarousel').animate({'left' : left_indent},
-										{queue:false, duration:500, complete: function(){
-	        									$('.containerCarousel li:last').after($('.containerCarousel li:first'));
-	        									$('.containerCarousel').css({'left' : -imgWidth - (paddingImg * 2)});
-        									}
-        								});
+			$('.containerCarousel').animate({'left' : left_indent},
+											{queue:false, duration:500, complete: function(){
+		        									$('.containerCarousel li:last').after($('.containerCarousel li:first'));
+		        									$('.containerCarousel').css({'left' : -imgWidth - (paddingImg * 2)});
+		        									enAnimacion = false;
+	        									}
+	        								});
+		};
 	});
 });
 

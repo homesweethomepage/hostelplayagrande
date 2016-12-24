@@ -178,7 +178,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 box-hostel-desc">
+          <div class="col-md-6 box-hostel-desc none-display">
             <div class="box-hostel-titulo">
               <div class="box-titulo">
                 <h3 class="pg-descr">Playa Grande<i class="fa fa-plus" aria-hidden="true"></i></h3>
@@ -208,7 +208,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 box-hostel-img none-display">
             <div class="box-img box-shadow">
               <img id="img-descripcion" class="img-responsive" src="images/descripciones/Suites.jpg" alt="Frente - Hostel Playa Grande">
             </div>
@@ -640,12 +640,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.1.3/mustache.js"></script>
   <script src="js/map.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/modal.js"></script>
+  <script src="js/animate.js"></script>
   <script src="js/descripciones.js"></script>
   <script src="js/reserva.js"></script>
   <script src="js/contacto.js"></script>
   <script src="js/carouselgalery.js"></script>
   <script src="js/novedades.js"></script>
-  <script src="js/animate.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 </html>
