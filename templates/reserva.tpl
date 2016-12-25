@@ -29,7 +29,7 @@
           <label class="col-md-4 control-label">Nombre</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input  name="first_name" placeholder="Nombre" class="form-control"  type="text">
             </div>
           </div>
@@ -41,7 +41,7 @@
           <label class="col-md-4 control-label" >Apellido</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-user"></i></span>
               <input name="last_name" placeholder="Apellido" class="form-control"  type="text">
             </div>
           </div>
@@ -52,7 +52,7 @@
           <label class="col-md-4 control-label">E-Mail</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
               <input name="email" placeholder="Direccion de e-mail" class="form-control"  type="text">
             </div>
           </div>
@@ -65,7 +65,7 @@
           <label class="col-md-4 control-label">Teléfono #</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+              <span class="input-group-addon"><i class="fa fa-phone"></i></span>
               <input name="phone" placeholder="54(223)451-7307" class="form-control" type="text">
             </div>
           </div>
@@ -77,7 +77,7 @@
           <label class="col-md-4 control-label">Hostel</label>
           <div class="col-md-4 selectContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+              <span class="input-group-addon"><i class="fa fa-h-square"></i></span>
               <select name="hostel" class="form-control selectpicker" >
                 <option value="any">Todos los hostels</option>
                 <option value="hpg">Playa Grande</option>
@@ -93,7 +93,7 @@
           <label class="col-md-4 control-label">Habitación</label>
           <div class="col-md-4 selectContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+              <span class="input-group-addon"><i class="fa fa-bed"></i></span>
               <select name="room" class="form-control selectpicker" >
                 <option value="0">Single c/baño privado</option>
                 <option value="1">Doble 2 camas c/baño privado</option>
@@ -111,7 +111,7 @@
           <label for="check-in" class="col-md-4 control-label">Desde</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
               <input name="check-in" class="form-control" type="text" id="input-fecha-check-in">
             </div>
           </div>
@@ -121,7 +121,7 @@
           <label for="check-out" class="col-md-4 control-label">Hasta</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
               <input name="check-out" class="form-control" type="text" id="input-fecha-check-out">
             </div>
           </div>
@@ -131,7 +131,7 @@
           <label class="col-md-4 control-label">Comprobante</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+              <span class="input-group-addon"><i class="fa fa-file"></i></span>
               <div class="inputFile btn btn-default">
                 <input name="input-aux" class="form-control input-aux btn btn-default" type="text">
                 <input type="file" class="form-control input-file" name="" required/>
@@ -144,7 +144,7 @@
           <label class="col-md-4 control-label">Comentario</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
-              <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+              <span class="input-group-addon"><i class="fa fa-comment"></i></span>
               <textarea class="form-control" name="comment" placeholder="Escribe un comentario..."></textarea>
             </div>
           </div>
