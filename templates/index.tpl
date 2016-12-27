@@ -636,5 +636,6 @@
   <script src="js/carouselgalery.js"></script>
   <script src="js/novedades.js"></script>
   <script src="js/modal.js"></script>
+  <script src="js/tarifa.js"></script>
 </body>
 </html>

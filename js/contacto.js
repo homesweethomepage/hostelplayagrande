@@ -16,6 +16,7 @@ $("#boton-comentario").click(function(event) {
         "asunto": asunto,
         "comentario": comentario
       };
+      $('#boton-comentario').html('Enviando... <i class="fa fa-paper-plane" aria-hidden="true"></i>');
       $.ajax({
           type: "POST",
           url: "mail/contacto.php",
@@ -24,11 +25,13 @@ $("#boton-comentario").click(function(event) {
             $("#contacto-error-message").addClass("hidden");
             $("#contacto-info-message").addClass("hidden");
             $("#contacto-success-message").removeClass("hidden");
+            $('#boton-comentario').html('Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i>');
           },
           error:function () {
             $("#contacto-success-message").addClass("hidden");
             $("#contacto-info-message").addClass("hidden");
             $("#contacto-error-message").removeClass("hidden");
+            $('#boton-comentario').html('Enviar <i class="fa fa-paper-plane" aria-hidden="true"></i>');
           }
       });
     }
