@@ -2,6 +2,7 @@
   <h3>{{novedad}}</h3>
   <a class="glyphicon glyphicon-trash js-borrar-novedad" href="" idnovedad="{{id}}"></a>
   <a class="glyphicon glyphicon-pencil js-btn-copiar-novedad" href="http://localhost/proyectos/hostel/index.php?action=admin_novedad&idnovedad={{id}}"></a>
+  <h5>{{fecha}}</h5>
   <p>{{cuerpo}}</p>
   <img src="{{imagen}}" alt="imagen-novedad-{{id}}-{{imagen.id}}" class="img-responsive" />
 </li>

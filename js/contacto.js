@@ -18,7 +18,7 @@ $("#boton-comentario").click(function(event) {
       };
       $.ajax({
           type: "POST",
-          url: "contacto.php",
+          url: "mail/contacto.php",
           data: data,
           success: function(){
             $("#contacto-error-message").addClass("hidden");

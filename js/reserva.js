@@ -144,7 +144,7 @@ $("#boton-reserva").click(function(event) {
       };
       $.ajax({
           type: "POST",
-          url: "reserva.php",
+          url: "mail/reserva.php",
           data: data,
           success: function(){
             botonConsulta('Consulta Enviada <br> Exitosamente!','btnSuccess');

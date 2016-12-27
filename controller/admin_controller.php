@@ -77,7 +77,7 @@ class AdminController {
 
   function modificarNovedad(){
       if(isset($_REQUEST['idnovedad'])){
-        $this->model->modificarNovedad($_REQUEST['idnovedad'],$_REQUEST['novedad'],$_REQUEST['cuerpo']);
+        $this->model->modificarNovedad($_REQUEST['idnovedad'],$_REQUEST['novedad'],$_REQUEST['fecha'],$_REQUEST['cuerpo']);
       }
       else{
         $this->view->mostrarError('Error al modificar novedad');

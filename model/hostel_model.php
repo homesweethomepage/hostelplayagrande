@@ -88,9 +88,8 @@ class HostelModel {
   }
 
   function agregarNovedad($novedad){
-    $consulta = $this->db->prepare('INSERT INTO novedad(novedad,cuerpo) VALUES(?,?)');
-    // $string = "<p>".str_replace("\n", "</p><p>", $novedad['cuerpo'])."</p>";
-    $consulta->execute(array($novedad['novedad'],$novedad['cuerpo']));
+    $consulta = $this->db->prepare('INSERT INTO novedad(novedad,fecha,cuerpo) VALUES(?,?,?)');
+    $consulta->execute(array($novedad['novedad'],$novedad['fecha'],$novedad['cuerpo']));
   }
 
   function borrarNovedad($id_novedad){
@@ -118,8 +117,8 @@ class HostelModel {
   }
 
   function modificarNovedad($nov){
-    $consulta = $this->db->prepare('UPDATE novedad SET novedad=?, cuerpo=? WHERE id=?');
-    $consulta->execute(array($nov['novedad'],$nov['cuerpo'],$nov['idnovedad']));
+    $consulta = $this->db->prepare('UPDATE novedad SET novedad=?, fecha=?, cuerpo=? WHERE id=?');
+    $consulta->execute(array($nov['novedad'],$nov['fecha'],$nov['cuerpo'],$nov['idnovedad']));
   }
 
   function getActividades(){
@@ -140,7 +139,7 @@ class HostelModel {
 
   function getGaleria(){
     $galeria = array();
-    $consulta = $this->db->prepare("SELECT * FROM galeria LIMIT 12");
+    $consulta = $this->db->prepare("SELECT * FROM galeria");
     $consulta->execute();
     $galeria = $consulta->fetchAll();
     return $galeria;
@@ -148,7 +147,7 @@ class HostelModel {
 
   function getGaleriaDif($hostel){
     $galeria = array();
-    $consulta = $this->db->prepare("SELECT * FROM galeria WHERE hostel=? LIMIT 12");
+    $consulta = $this->db->prepare("SELECT * FROM galeria WHERE hostel=?");
     $consulta->execute(array($hostel));
     $galeria = $consulta->fetchAll();
     return $galeria;

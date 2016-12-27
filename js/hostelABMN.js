@@ -35,9 +35,7 @@ $(document).ready(function(){
   $('#js-btn-modificar-novedad').on('click', function(event){
     event.preventDefault();
     var mod = $("#modNovedad").serialize();
-    debugger;
     mod = mod+"&modificar=1";
-    debugger;
     modificarNovedad(mod);
   });
 

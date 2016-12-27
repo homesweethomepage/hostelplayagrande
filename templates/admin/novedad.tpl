@@ -69,6 +69,11 @@
             </div>
 
             <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="text" class="form-control" id="modfecha" name="fecha" placeholder="dd/mm/yyyy" value="{$novedad['fecha']}" required>
+            </div>
+
+            <div class="form-group">
               <label for="novedad">Cuerpo</label>
               <textarea class="form-control" rows="6" id="modcuerpo" name="cuerpo" required>{$novedad['cuerpo']}</textarea>
             </div>

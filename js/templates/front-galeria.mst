@@ -1,5 +1,5 @@
 <li class="foto-galery">
   <div class="box-img box-shadow">
-    <img src="{{ruta}}" alt="foto de {{hostel}}">
+    <img src="{{ruta}}" alt="{{hostel}}">
   </div>
 </li>

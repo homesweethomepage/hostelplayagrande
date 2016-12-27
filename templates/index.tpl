@@ -179,9 +179,9 @@
         </div>
         <div class="row">
           <div class="col-md-6 box-hostel-desc none-display">
-            <div class="box-hostel-titulo">
+            <div class="box-hostel-titulo descripcion-activa">
               <div class="box-titulo">
-                <h3 class="pg-descr">Playa Grande<i class="fa fa-plus" aria-hidden="true"></i></h3>
+                <h3 class="pg-descr">Playa Grande<i class="fa fa-minus" aria-hidden="true"></i></h3>
               </div>
               <div class="box-descripcion">
                 <p>Bienvenidos a nuestro primer Hostel en Mar del Plata, nos encontramos localizados a dos cuadras del mar en Playa Grande, una de las playas mas bonitas y exclusivas de la ciudad y a metros del centro comercial y nocturno de la calle Alem.</p>
@@ -198,9 +198,9 @@
                 <p>En nuestros hostels se acostumbra hacer noches de comidas caseras para promover la relación entre sus huéspedes, la buena onda y diversión.</p>
               </div>
             </div>
-            <div class="box-hostel-titulo descripcion-activa">
+            <div class="box-hostel-titulo">
               <div class="box-titulo">
-                <h3 class="pg-descr">Suites<i class="fa fa-minus" aria-hidden="true"></i></h3>
+                <h3 class="pg-descr">Suites<i class="fa fa-plus" aria-hidden="true"></i></h3>
               </div>
               <div class="box-descripcion">
                 <p>Bienvenidos a nuestro primer Hostel en Mar del Plata, nos encontramos localizados a dos cuadras del mar en Playa Grande, una de las playas mas bonitas y exclusivas de la ciudad y a metros del centro comercial y nocturno de la calle Alem.</p>
@@ -210,7 +210,7 @@
           </div>
           <div class="col-md-6 box-hostel-img none-display">
             <div class="box-img box-shadow">
-              <img id="img-descripcion" class="img-responsive" src="images/descripciones/Suites.jpg" alt="Frente - Hostel Playa Grande">
+              <img id="img-descripcion" class="img-responsive" src="images/descripciones/Playa Grande.jpg" alt="Frente - Hostel Playa Grande">
             </div>
           </div>
         </div>
@@ -240,16 +240,16 @@
         </div>
         <div class="row">
           <div class="titulo-galery col-md-offset-1 col-md-2 col-sm-3 col-xs-6">
-            <h3><a href="#" class="active">Todos</a></h3>
+            <h3><a id="js-galeria-todos" href="#" class="active">Todos</a></h3>
           </div>
           <div class="titulo-galery col-md-3 col-sm-3 col-xs-6">
-            <h3><a href="#">Playa Grande</a></h3>
+            <h3><a id="js-galeria-hpg" href="#">Playa Grande</a></h3>
           </div>
           <div class="titulo-galery col-md-2 col-sm-3 col-xs-6">
-            <h3><a href="#">Austral</a></h3>
+            <h3><a id="js-galeria-hpga" href="#">Austral</a></h3>
           </div>
           <div class="titulo-galery col-md-3 col-sm-3 col-xs-6">
-            <h3><a href="#">Suites</a></h3>
+            <h3><a id="js-galeria-hpgs" href="#">Suites</a></h3>
           </div>
         </div>
         <div class="row galeryCarousel">
@@ -261,21 +261,6 @@
           </div>
           <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
         </div>
-        <!-- <div class="row centerimg">
-          {foreach $galeria as $itemGaleria}
-          <div class="foto-galery col-md-4 col-sm-6">
-            <div class="box-img box-shadow">
-              <img src="{$itemGaleria['ruta']}" alt="foto de {$itemGaleria['hostel']}">
-            </div>
-          </div>
-          {/foreach}
-        </div>
-        <div>
-          <ul class="pager">
-            <li class="previous"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></li>
-            <li class="next"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></li>
-          </ul>
-        </div> -->
       </div>
     </section><!-- ./GALERIA 2 -->
   </div>
@@ -310,7 +295,7 @@
             </div>
             <div class="col-xs-6">
               <div class="servicios servicios-right">
-                <span>Se admiten viajeron solos</span>
+                <span>Se admiten viajeros solos</span>
                 <i class="fa fa-user fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-viajerosolo.png" alt="Viajero Solo"> -->
               </div>
@@ -338,7 +323,7 @@
               <div class="servicios servicios-left">
                 <i class="fa fa-wifi fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-wifi.png" alt="Wifi"> -->
-                <span>Coneccion a internet / wifi</span>
+                <span>Conexión a internet / wifi</span>
               </div>
               <div class="servicios servicios-left">
                 <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
@@ -353,7 +338,7 @@
                 <!-- <img src="images/iconos/servicios-salascomunes.png" alt="Salas comunes"> -->
               </div>
               <div class="servicios servicios-right">
-                <span>Cocina para huespedes</span>
+                <span>Cocina para huéspedes</span>
                 <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-cocina.png" alt="Cocina"> -->
               </div>
@@ -371,17 +356,17 @@
               <div class="servicios servicios-left">
                 <i class="fa fa-bicycle fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-bicicleta.png" alt="Bicicleta"> -->
-                <span>Alquiles de bicicletas en el albergue o cerca</span>
+                <span>Alquiler de bicicletas en el albergue o cerca</span>
               </div>
               <div class="servicios servicios-left">
                 <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-sabanas.png" alt="Cama"> -->
-                <span>Sabanas incluidas en el precio</span>
+                <span>Sabanas incluídas en el precio</span>
               </div>
               <div class="servicios servicios-left">
                 <i class="fa fa-tint fa-3x" aria-hidden="true"></i>
                 <!-- <img src="images/iconos/servicios-lavanderia.png" alt="Lavaropas"> -->
-                <span>Servicios de lavanderia</span>
+                <span>Servicios de lavandería</span>
               </div>
             </div>
             <div class="col-xs-6">
