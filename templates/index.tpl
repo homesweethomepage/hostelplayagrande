@@ -252,15 +252,20 @@
             <h3><a href="#">Suites</a></h3>
           </div>
         </div>
-        <div class="row galeryCarousel">
-          <div class="arrowleft"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></div>
-          <div class="imgCarousel">
-            <ul id="carousel-galeria" class="containerCarousel">
+      </div>
+      <div id="galeryAnimation" class="noHeight">
+        <div class="container">
+          <div class="row galeryCarousel">
+            <div class="arrowleft"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></div>
+            <div class="imgCarousel">
+              <ul id="carousel-galeria" class="containerCarousel">
 
-            </ul>
+              </ul>
+            </div>
+            <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
           </div>
-          <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
         </div>
+      </div>
         <!-- <div class="row centerimg">
           {foreach $galeria as $itemGaleria}
           <div class="foto-galery col-md-4 col-sm-6">
@@ -276,7 +281,6 @@
             <li class="next"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></li>
           </ul>
         </div> -->
-      </div>
     </section><!-- ./GALERIA 2 -->
   </div>
 

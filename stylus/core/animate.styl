@@ -53,9 +53,23 @@
   animation-fill-mode both
   animation-iteration-count 1
   animation-timing-function ease-in
+  
+.inDown2
+  animation-name inDown2
+  animation-duration 1s
+  animation-fill-mode both
+  animation-iteration-count 1
+  animation-timing-function ease-in
 
 .outUp
   animation-name outUp
+  animation-duration 1s
+  animation-fill-mode both
+  animation-iteration-count 1
+  animation-timing-function ease-out
+  
+.outUp2
+  animation-name outUp2
   animation-duration 1s
   animation-fill-mode both
   animation-iteration-count 1
@@ -128,13 +142,26 @@
     padding 10px 10px 0
     max-height 400px
     
-@keyframes outUp
+@keyframes inDown2
   from
-    max-height 400px
-    padding 10px 10px 0
+    max-height 0px
+    padding-top 0px
+    padding-bottom 0px
     
   to
-    padding 0px 10px 0
+    padding-top 15px
+    padding-bottom 15px
+    max-height 300px
+    
+@keyframes outUp2
+  from
+    padding-top 15px
+    padding-bottom 15px
+    max-height 300px
+    
+  to
+    padding-top 0px
+    padding-bottom 0px
     max-height 0px
   
 @keyframes zoomIn

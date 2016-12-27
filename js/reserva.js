@@ -142,6 +142,7 @@ $("#boton-reserva").click(function(event) {
         "checkIn": checkIn,
         "checkOut": checkOut
       };
+      $(".box-botton span").html('Enviando... <br> Espere Por Favor');
       $.ajax({
           type: "POST",
           url: "reserva.php",
