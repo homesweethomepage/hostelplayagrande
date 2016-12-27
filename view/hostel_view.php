@@ -11,12 +11,15 @@ class HostelView {
     $this->errores = array();
   }
 
-  function mostrarHome($galeria,$novedades,$actividades,$tarifas){
-    $this->smarty->assign('galeria', $galeria);
-    $this->smarty->assign('novedades', $novedades);
+  function mostrarHome($actividades,$tarifas){
     $this->smarty->assign('actividades', $actividades);
     $this->smarty->assign('tarifas', $tarifas);
     $this->smarty->display('index.tpl');
+  }
+
+  function mostrarReserva($req){
+    $this->smarty->assign('req', $req);
+    $this->smarty->display('reserva.tpl');
   }
 
   function mostrarContacto(){

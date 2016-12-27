@@ -22,6 +22,7 @@ class ConfigApp {
   public static $ACTION_ADMIN_GALERIA = 'admin_galeria';
   public static $ACTION_ADMIN_BANNER = 'admin_banner';
   public static $ACTION_MODIFICAR_BANNER = 'modificar_banner';
+  public static $ACTION_RESERVA = 'reserva';
   public static $ACTION_LOGIN = 'login';
   public static $ACTION_LOGOUT = 'logout';
 
