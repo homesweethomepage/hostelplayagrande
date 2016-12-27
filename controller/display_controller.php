@@ -13,7 +13,11 @@ class DisplayController {
   }
 
   function mostrarHome(){
-    $this->view->mostrarHome($this->model->getGaleria(),$this->model->getNovedades(),$this->model->getActivities(),$this->model->getActividades());
+    $this->view->mostrarHome($this->model->getActivities(),$this->model->getActividades());
+  }
+
+  function mostrarReserva(){
+    $this->view->mostrarReserva($_REQUEST);
   }
 
 }

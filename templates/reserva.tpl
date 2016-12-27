@@ -5,9 +5,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Playa Grande Hostels</title>
-  <link href="../css/bootstrap.min.css" rel="stylesheet">
-  <link href="../css/font-awesome.min.css" rel="stylesheet">
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <link rel="shortcut icon" href="images/ico/favicon.png">
 </head>
 <body>
@@ -30,7 +30,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input  name="first_name" placeholder="Nombre" class="form-control"  type="text">
+              <input  name="first_name" placeholder="Nombre" class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -78,11 +78,11 @@
           <div class="col-md-4 selectContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-h-square"></i></span>
-              <select name="hostel" class="form-control selectpicker" >
+              <select name="hostel" class="form-control selectpicker">
                 <option value="any">Todos los hostels</option>
-                <option value="hpg">Playa Grande</option>
-                <option value="hpga">Playa Grande Austral</option>
-                <option value="hpgs">Playa Grande Suites</option>
+                <option value="hpg" {if $req['hostel'] eq "hpg"}selected{/if}>Playa Grande</option>
+                <option value="hpga" {if $req['hostel'] eq "hpga"}selected{/if}>Playa Grande Austral</option>
+                <option value="hpgs" {if $req['hostel'] eq "hpgs"}selected{/if}>Playa Grande Suites</option>
               </select>
             </div>
           </div>
@@ -96,12 +96,12 @@
               <span class="input-group-addon"><i class="fa fa-bed"></i></span>
               <select name="room" class="form-control selectpicker" >
                 <option value="0">Single c/baño privado</option>
-                <option value="1">Doble 2 camas c/baño privado</option>
-                <option value="2">Doble matrimonial camas c/baño privado</option>
-                <option value="3">Triple c/baño privado</option>
-                <option value="4">Cuadruple c/baño privado</option>
-                <option value="5">5/6 c/baño privado</option>
-                <option value="6">8 c/baño privado</option>
+                <option value="1" {if $req['habitacion'] eq "1"}selected{/if}>Doble 2 camas c/baño privado</option>
+                <option value="2" {if $req['habitacion'] eq "2"}selected{/if}>Doble matrimonial camas c/baño privado</option>
+                <option value="3" {if $req['habitacion'] eq "3"}selected{/if}>Triple c/baño privado</option>
+                <option value="4" {if $req['habitacion'] eq "4"}selected{/if}>Cuadruple c/baño privado</option>
+                <option value="5" {if $req['habitacion'] eq "5"}selected{/if}>5/6 c/baño privado</option>
+                <option value="6" {if $req['habitacion'] eq "6"}selected{/if}>8 c/baño privado</option>
               </select>
             </div>
           </div>
@@ -112,7 +112,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-              <input name="check-in" class="form-control" type="text" id="input-fecha-check-in">
+              <input name="check-in" class="form-control" type="text" id="input-fecha-check-in" value="{$req['checkin']}">
             </div>
           </div>
         </div>
@@ -122,7 +122,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-              <input name="check-out" class="form-control" type="text" id="input-fecha-check-out">
+              <input name="check-out" class="form-control" type="text" id="input-fecha-check-out" value="{$req['checkout']}">
             </div>
           </div>
         </div>
@@ -172,8 +172,8 @@
 <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
-<script type="text/javascript" src="../js/date.js"></script>
-<script type="text/javascript" src="../js/form.js"></script>
-<script type="text/javascript" src="../js/reserva.js"></script>
+<script type="text/javascript" src="js/date.js"></script>
+<script type="text/javascript" src="js/form.js"></script>
+<script type="text/javascript" src="js/reserva.js"></script>
 </body>
 </html>

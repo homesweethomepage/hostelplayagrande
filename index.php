@@ -86,6 +86,10 @@ else {
       $adminController = new AdminController();
       $adminController->modificarBanner();
       break;
+    case ConfigApp::$ACTION_RESERVA:
+      $displayController = new DisplayController();
+      $displayController->mostrarReserva();
+      break;
     case ConfigApp::$ACTION_LOGIN:
       $loginController = new LoginController();
       $loginController->login();
