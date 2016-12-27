@@ -17,6 +17,7 @@ var imagenesHPGA = [];
 var imagenesHPGS = [];
 var imgWidth;
 var enAnimacion = false;
+var enTransicion = false;
 
 function calcContainerWidth(width) {
 	var widthPadding = paddingContainer * 2;
@@ -71,6 +72,12 @@ function setCarousel(container, img) {
 	$('.arrowleft a').css({'line-height': getRatio(img) + 'px'});
 	$('.containerCarousel').css({'left': -img - (paddingImg * 2)});
 	$('.containerCarousel li').width(img);
+	$('#galeryAnimation').addClass('inDown2').one(endAnimate, function () {
+		$(this).addClass('yesHeight');
+		$(this).removeClass('noHeight');
+		$(this).removeClass('inDown2');
+		enTransicion = false;
+	});
 }
 
 function frontCrearGaleriaHTML(galeria) {
@@ -83,6 +90,7 @@ function frontCrearGaleriaHTML(galeria) {
 }
 
 function inicGaleria(){
+	enTransicion = true;
   $.ajax({
     method: 'GET',
     url:'api/galeria',
@@ -103,10 +111,20 @@ function inicGaleria(){
 	      var html = frontCrearGaleriaHTML(gal);
 	      $('#carousel-galeria').append(html);
 			});
-			setCarousels();
+			//setCarousels();
 			setTimeout(setCarousels,2000);
     }
   });
+}
+
+function closeGalery (imagenes) {
+	enTransicion = true;
+	$('#galeryAnimation').addClass('outUp2').one(endAnimate, function () {
+		$(this).addClass('noHeight');
+		$(this).removeClass('yesHeight');
+		$(this).removeClass('outUp2');
+		frontCrearGaleria(imagenes);
+	})
 }
 
 function frontCrearGaleria(imagenes){
@@ -115,7 +133,7 @@ function frontCrearGaleria(imagenes){
 		var html = frontCrearGaleriaHTML(gal);
 	  $('#carousel-galeria').append(html);
 	});
-	setCarousels();
+	//setCarousels();
 	setTimeout(setCarousels,2000);
 }
 
@@ -157,22 +175,30 @@ $(document).ready(function () {
 
 	$linkTodos.on('click', function(e){
 		e.preventDefault();
-		frontCrearGaleria(imagenesGaleria);
+		if (!enTransicion) {
+			closeGalery(imagenesGaleria);
+		};
 	});
 
 	$linkHPG.on('click', function(e){
 		e.preventDefault();
-		frontCrearGaleria(imagenesHPG);
+		if (!enTransicion) {
+			closeGalery(imagenesHPG);
+		};
 	});
 
 	$linkHPGA.on('click', function(e){
 		e.preventDefault();
-		frontCrearGaleria(imagenesHPGA);
+		if (!enTransicion) {
+			closeGalery(imagenesHPGA);
+		};
 	});
 
 	$linkHPGS.on('click', function(e){
 		e.preventDefault();
-		frontCrearGaleria(imagenesHPGS);
+		if (!enTransicion) {
+			closeGalery(imagenesHPGS);
+		};
 	});
 
 });
