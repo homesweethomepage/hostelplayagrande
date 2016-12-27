@@ -12,7 +12,13 @@
 </head>
 <body>
   <header>
-    <!-- aca va logo -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4 logo-reserva">
+          <img src="../images/logo4.png" alt="Logo" class="img-responsive">
+        </div>
+      </div>
+    </div>
   </header>
 
   <section id="reservation" class="container"><!-- CONTAINER RESERVA -->

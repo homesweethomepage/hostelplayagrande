@@ -252,14 +252,18 @@
             <h3><a id="js-galeria-hpgs" href="#">Suites</a></h3>
           </div>
         </div>
-        <div class="row galeryCarousel">
-          <div class="arrowleft"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></div>
-          <div class="imgCarousel">
-            <ul id="carousel-galeria" class="containerCarousel">
+      </div>
+      <div id="galeryAnimation" class="noHeight">
+        <div class="container">
+          <div class="row galeryCarousel">
+            <div class="arrowleft"><a href="#"><i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i></a></div>
+            <div class="imgCarousel">
+              <ul id="carousel-galeria" class="containerCarousel">
 
-            </ul>
+              </ul>
+            </div>
+            <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
           </div>
-          <div class="arrowright"><a href="#"><i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i></a></div>
         </div>
       </div>
     </section><!-- ./GALERIA 2 -->
