@@ -15,7 +15,7 @@ if($_POST){
     ."Comentario: " .$comentario
 		;
 
-	$subject = "HPG - Comentario de: " .$email;
+	$subject = "HPG Web - Comentario de: " .$email;
 
 	$header = "From: " .$email ."\r\n";
 	$header.= "MIME-Version: 1.0\r\n";

@@ -15,7 +15,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4 col-md-offset-4 logo-reserva">
-          <img src="../images/logo4.png" alt="Logo" class="img-responsive">
+          <img src="images/logo4.png" alt="Logo" class="img-responsive">
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@
 
   <section id="reservation" class="container"><!-- CONTAINER RESERVA -->
 
-    <form class="well form-horizontal box-shadow form-orange" action=" " method="post"  id="contact_form">
+    <form class="well form-horizontal box-shadow form-orange" action="" method="post"  id="contact_form"  enctype="multipart/form-data">
       <fieldset>
 
         <!-- Form Name -->
@@ -84,7 +84,7 @@
           <div class="col-md-4 selectContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-h-square"></i></span>
-              <select name="hostel" class="form-control selectpicker">
+              <select name="hostel" class="form-control selectpicker" disabled>
                 <option value="any">Todos los hostels</option>
                 <option value="hpg" {if $req['hostel'] eq "hpg"}selected{/if}>Playa Grande</option>
                 <option value="hpga" {if $req['hostel'] eq "hpga"}selected{/if}>Playa Grande Austral</option>
@@ -100,7 +100,7 @@
           <div class="col-md-4 selectContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-bed"></i></span>
-              <select name="room" class="form-control selectpicker" >
+              <select name="room" class="form-control selectpicker" disabled>
                 <option value="0">Single c/baño privado</option>
                 <option value="1" {if $req['habitacion'] eq "1"}selected{/if}>Doble 2 camas c/baño privado</option>
                 <option value="2" {if $req['habitacion'] eq "2"}selected{/if}>Doble matrimonial camas c/baño privado</option>
@@ -118,7 +118,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-              <input name="check-in" class="form-control" type="text" id="input-fecha-check-in" value="{$req['checkin']}">
+              <input name="check-in" class="form-control" type="text" id="input-fecha-check-in" value="{$req['checkin']}" disabled>
             </div>
           </div>
         </div>
@@ -128,19 +128,19 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-              <input name="check-out" class="form-control" type="text" id="input-fecha-check-out" value="{$req['checkout']}">
+              <input name="check-out" class="form-control" type="text" id="input-fecha-check-out" value="{$req['checkout']}" disabled>
             </div>
           </div>
         </div>
 
         <div class="form-group">
-          <label class="col-md-4 control-label">Comprobante</label>
+          <label for="img_comprobante" class="col-md-4 control-label">Comprobante</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-file"></i></span>
               <div class="inputFile btn btn-default">
                 <input name="input-aux" class="form-control input-aux btn btn-default" type="text">
-                <input type="file" class="form-control input-file" name="" required/>
+                <input type="file" class="form-control input-file" name="img_comprobante" required/>
               </div>
             </div>
           </div>
