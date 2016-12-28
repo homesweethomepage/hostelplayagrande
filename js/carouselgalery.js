@@ -111,7 +111,6 @@ function inicGaleria(){
 	      var html = frontCrearGaleriaHTML(gal);
 	      $('#carousel-galeria').append(html);
 			});
-			//setCarousels();
 			setTimeout(setCarousels,2000);
     }
   });
@@ -133,8 +132,12 @@ function frontCrearGaleria(imagenes){
 		var html = frontCrearGaleriaHTML(gal);
 	  $('#carousel-galeria').append(html);
 	});
-	//setCarousels();
 	setTimeout(setCarousels,2000);
+}
+
+function changeActive(activo){
+	$(".titulo-galery").find("a").removeClass("active");
+	activo.find("a").addClass("active");
 }
 
 $(document).ready(function () {
@@ -177,6 +180,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesGaleria);
+			changeActive($(this));
 		};
 	});
 
@@ -184,6 +188,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesHPG);
+			changeActive($(this));
 		};
 	});
 
@@ -191,6 +196,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesHPGA);
+			changeActive($(this));
 		};
 	});
 
@@ -198,6 +204,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesHPGS);
+			changeActive($(this));
 		};
 	});
 

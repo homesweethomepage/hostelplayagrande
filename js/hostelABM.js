@@ -46,7 +46,6 @@ function loadingOff(){
 
 function agregarNovedad(novedad){
   loadingOn();
-  debugger;
   if(archivos!=null){
     $.ajax({
       method: 'POST',
