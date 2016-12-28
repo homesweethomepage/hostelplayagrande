@@ -97,6 +97,7 @@ function inicGaleria(){
     datatype: 'JSON',
     success: function(galeria){
       imagenesGaleria = galeria;
+			imagenesGaleria.sort(function(a, b){return 0.5 - Math.random()});
       $('#carousel-galeria').children().remove();
 			imagenesGaleria.forEach(function(gal){
 				if(gal['hostel'] == "Hostel Playa Grande"){
@@ -105,7 +106,7 @@ function inicGaleria(){
 				else if(gal['hostel'] == "Hostel Playa Grande Austral"){
 					imagenesHPGA.push(gal);
 				}
-				else {
+				else if(gal['hostel'] == "Hostel Playa Grande Suites"){
 					imagenesHPGS.push(gal);
 				};
 	      var html = frontCrearGaleriaHTML(gal);
@@ -137,7 +138,7 @@ function frontCrearGaleria(imagenes){
 
 function changeActive(activo){
 	$(".titulo-galery").find("a").removeClass("active");
-	activo.find("a").addClass("active");
+	activo.addClass("active");
 }
 
 $(document).ready(function () {
@@ -180,7 +181,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesGaleria);
-			changeActive($(this));
+			changeActive($linkTodos);
 		};
 	});
 
@@ -188,7 +189,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesHPG);
-			changeActive($(this));
+			changeActive($linkHPG);
 		};
 	});
 
@@ -196,7 +197,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesHPGA);
-			changeActive($(this));
+			changeActive($linkHPGA);
 		};
 	});
 
@@ -204,7 +205,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		if (!enTransicion) {
 			closeGalery(imagenesHPGS);
-			changeActive($(this));
+			changeActive($linkHPGS);
 		};
 	});
 

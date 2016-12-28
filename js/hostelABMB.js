@@ -51,4 +51,9 @@ $(document).ready(function(){
     modificarSlide(form[0].value);
   });
 
+  $('#js-refresh-banner').on('click', function(event){
+    event.preventDefault();
+    window.location.href = 'http://localhost/proyectos/hostel/index.php?action=admin_banner';
+  });
+
 });

@@ -77,7 +77,8 @@
 
               <div class="form-group">
                 <label for="hostel">Hostel:</label>
-                <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande" checked required>Playa Grande</label>
+                <label class="radio-inline"><input type="radio" name="hostel" value="Todos los Hostels" checked required>Todos</label>
+                <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande"required>Playa Grande</label>
                 <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande Austral" required>Austral</label>
                 <label class="radio-inline"><input type="radio" name="hostel" value="Hostel Playa Grande Suites" required>Suites</label>
               </div>

@@ -53,7 +53,7 @@
             <li class="anchor-link"><a class="nav-item" href="#news">Novedades</a></li>
             <li class="anchor-link"><a class="nav-item" href="#contacts">Contacto</a></li>
             <li class="flag-container"><a href="#"><img class="flag box-shadow" src="images/ico/es.png" /></a></li>
-            <li class="flag-container"><a href="index.html"><img class="flag box-shadow" src="images/ico/en.png" /></a></li>
+            <li class="flag-container"><a href="#"><img class="flag box-shadow" src="images/ico/en.png" /></a></li>
           </ul>
         </div><!-- ./NAV CONTENT -->
       </div>
@@ -612,7 +612,7 @@
     <div class="container">
       <div class="row">
       	<div class="col-md-6 copyr">
-          <a href="#"><img class="img-responsive" src="images/ico/hostelling.png" alt="Hostelling International Logo"/></a>
+          <a href="https://www.hihostels.com/" target="_blank"><img class="img-responsive" src="images/ico/hostelling.png" alt="Hostelling International Logo"/></a>
           <p><span>Playa Grande Hostels</span> © 2016, Todos los derechos reservados.</p>
         </div>
       	<div class="col-md-6 powered">
@@ -630,11 +630,11 @@
   <script src="js/map.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/animate.js"></script>
-  <script src="js/descripciones.js"></script>
   <script src="js/reserva.js"></script>
   <script src="js/contacto.js"></script>
   <script src="js/carouselgalery.js"></script>
   <script src="js/novedades.js"></script>
   <script src="js/modal.js"></script>
+  <script src="js/tarifa.js"></script>
 </body>
 </html>
